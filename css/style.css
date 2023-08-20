@@ -1,0 +1,135 @@
+/* Basic Rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  cursor: default;
+}
+a,
+a:link,
+a:hover,
+a:visited,
+a:active,
+a:focus {
+  color: inherit;
+  text-decoration: inherit;
+}
+/* Container for Controlling Maximum Width on Zoom Out and for wider screens */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+/* Navigation Bar */
+.nav {
+  height: 6rem;
+  padding: 0 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__list {
+  padding: 0;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+.list__item {
+  display: inline-block;
+  padding: 0.5rem 0.95rem;
+  margin: 0.5rem;
+  transition: scale 0.3s;
+}
+.list__item:hover {
+  scale: 1.2;
+  background-color: #777777;
+  color: #fff;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.nav__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+.logo__heading,
+.logo__sub-heading {
+  margin: 0;
+}
+.logo__heading {
+  font-size: 2.7rem;
+  font-family: serif;
+  letter-spacing: 3px;
+}
+
+.logo__sub-heading {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+/* Buttons */
+.btn {
+  padding: 1rem;
+}
+.btn--dark-outline {
+  border: 1px solid #424242;
+}
+.btn--dark-outline:hover {
+  background-color: #252525;
+  color: #fff;
+}
+.btn--light-outline {
+  border: 1px solid #fff;
+  padding: 1rem 4rem;
+}
+.btn--light-outline:hover {
+  background-color: #fff;
+  color: #000;
+}
+/* Main Content */
+.main {
+  position: relative;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.main__image {
+  width: 100%;
+  height: 100%;
+}
+.main__overly {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  transition: all 0.5s;
+  width: 100%;
+}
+/* On Mouse Hover Overly Content */
+.main__overly,
+.main__btn,
+.main__heading,
+.main__description {
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+.main:hover .main__overly,
+.main:hover .main__btn,
+.main:hover .main__heading,
+.main:hover .main__description {
+  max-height: 100%;
+  opacity: 1;
+  visibility: visible;
+}
